@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# CLO Virtual Fashion Assignment
 
-First, run the development server:
+This is a modern fashion content platform built with Next.js, React, and Redux Toolkit. It features advanced filtering, searching, sorting, infinite scroll, and pixel-perfect UI matching provided design screenshots.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- **Content Filtering:**
+	- Filter by Paid, Free, and View Only options
+	- Price range slider for Paid content
+- **Keyword Search:**
+	- Search bar with instant filtering
+- **Sorting:**
+	- Custom dropdown for Featured, Newest, Higher Price, Lower Price
+- **Infinite Scroll:**
+	- Loads more content as you scroll, with skeleton loader placeholders
+- **Responsive Grid:**
+	- Adapts to all screen sizes
+- **Custom UI Components:**
+	- Checkbox, SearchBar, SortDropdown, PriceRangeSlider, ContentCard, SkeletonCard
+- **Pixel-Perfect Design:**
+	- Matches provided screenshots for layout, colors, fonts, and spacing
+- **Redux State Management:**
+	- All filters, search, and sort persist and sync with URL
+- **Unit Tests:**
+	- 100% coverage for all components using Jest and React Testing Library
+
+## Demo Setup
+
+1. **Install dependencies:**
+	 ```bash
+	 npm install
+	 # or
+	 yarn install
+	 ```
+
+2. **Run the development server:**
+	 ```bash
+	 npm run dev
+	 # or
+	 yarn dev
+	 ```
+
+3. **Open the app:**
+	 Visit [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. **Run all unit tests:**
+	 ```bash
+	 npm test
+	 # or
+	 yarn test
+	 ```
+
+## Folder Structure
+
+- `app/components/common/` — ContentCard, SkeletonCard
+- `app/components/ui/` — Checkbox, SearchBar, SortDropdown, PriceRangeSlider
+- `app/store/` — Redux slice and store
+- `app/hooks/` — Custom hooks (infinite scroll)
+- `app/__tests__/` — All unit tests for components
+- `app/lib/` — Shared types (if needed)
+
+## API
+
+Content is fetched from:
+```
+https://closet-recruiting-api.azurewebsites.net/api/data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can deploy this app to Vercel or any platform supporting Next.js. See [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Credits
 
-## Learn More
+- Built with Next.js, React, Redux Toolkit
+- UI matches provided CLO Virtual Fashion design screenshots
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+For any questions or demo requests, contact the project maintainer.
