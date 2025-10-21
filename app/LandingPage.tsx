@@ -158,7 +158,7 @@ const LandingPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen">
+  <div className="min-h-screen" style={{ background: '#23232a' }}>
       <div className="content-container py-8">
         {/* Search Section */}
         <div className="mb-6" style={{ marginTop: 24 }}>

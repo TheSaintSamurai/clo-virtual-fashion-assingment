@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         className="w-full px-4 py-3 rounded-lg text-white placeholder-gray-400 focus:outline-none"
-        style={{ backgroundColor: '#23232a', border: 'none', boxShadow: 'none', fontFamily: 'AvenirNextLTProRegular, Inter, Arial, sans-serif', fontSize: '16px' }}
+        style={{ backgroundColor: '#18181c', border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.12)', fontFamily: 'AvenirNextLTProRegular, Inter, Arial, sans-serif', fontSize: '16px' }}
       />
       <button
         onClick={handleSearch}

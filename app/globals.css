@@ -38,8 +38,12 @@ body {
 
 .content-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  background: #23232a;
+  box-shadow: none;
 }
 
 .search-bar {
@@ -80,6 +84,10 @@ body {
   padding: 18px 0 12px 0;
   border-radius: 0;
   margin-bottom: 18px;
+}
+.filter-bar .flex {
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .slider-container {
