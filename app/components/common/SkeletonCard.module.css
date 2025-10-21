@@ -1,0 +1,35 @@
+.skeletonCard {
+  background: #f3f3f3;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  min-height: 260px;
+  width: 100%;
+  animation: pulse 1.5s infinite;
+}
+.image {
+  background: #e0e0e0;
+  border-radius: 12px;
+  height: 120px;
+  width: 100%;
+}
+.title {
+  background: #e0e0e0;
+  border-radius: 6px;
+  height: 24px;
+  width: 70%;
+}
+.meta {
+  background: #e0e0e0;
+  border-radius: 6px;
+  height: 18px;
+  width: 40%;
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}

@@ -10,6 +10,7 @@ import {
   setFilters,
   setSearchKeyword,
   loadMoreContent,
+  loadMoreContentAsync,
   resetFilters,
   clearContent,
   selectDisplayedContent,
@@ -28,6 +29,7 @@ import SearchBar from './components/ui/SearchBar';
 import Checkbox from './components/ui/Checkbox';
 import Button from './components/ui/Button';
 import ContentCard from './components/common/ContentCard';
+import SkeletonCard from './components/common/SkeletonCard';
 import SortDropdown from './components/ui/SortDropdown';
 import PriceRangeSlider from './components/ui/PriceRangeSlider';
 
@@ -233,13 +235,15 @@ const LandingPage: React.FC = () => {
                     price={item.price}
                   />
                 ))}
+                {/* Skeletons for infinite scroll loading */}
+                {loadingMore && Array.from({ length: 4 }).map((_, idx) => (
+                  <SkeletonCard key={"skeleton-" + idx} />
+                ))}
               </div>
 
               {/* Load more trigger */}
               <div ref={loadMoreRef} className="h-32 flex justify-center items-center py-8">
-                {loadingMore ? (
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-500"></div>
-                ) : hasMore ? (
+                {loadingMore ? null : hasMore ? (
                   <div className="text-gray-400 text-sm">Scroll down to load more...</div>
                 ) : null}
               </div>
