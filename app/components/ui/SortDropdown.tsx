@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 const SORT_OPTIONS = [
-  { value: 'featured', label: 'Featured' },
-  { value: 'newest', label: 'Newest' },
+  { value: 'name', label: 'Item Name' },
   { value: 'higher', label: 'Higher Price' },
   { value: 'lower', label: 'Lower Price' },
 ];
@@ -46,7 +45,7 @@ const SortDropdown: React.FC<SortDropdownProps> = ({ value, onChange }) => {
         onClick={() => setOpen((o) => !o)}
         type="button"
       >
-        <span style={{ fontFamily: 'AvenirNextLTProRegular', fontSize: 13 }}>{SORT_OPTIONS.find(opt => opt.value === value)?.label || 'Featured'}</span>
+        <span style={{ fontFamily: 'AvenirNextLTProRegular', fontSize: 13 }}>{SORT_OPTIONS.find(opt => opt.value === value)?.label || 'Item Name'}</span>
         <svg style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }} className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>

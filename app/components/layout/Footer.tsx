@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <div className="text-gray-400 text-sm">
-            © 2024 CLO-SET. All rights reserved.
+            © 2025 CONNECT. All rights reserved.
           </div>
         </div>
       </div>

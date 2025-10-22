@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface ContentCardProps {
-  id: string;
   imagePath: string;
   creator: string;
   title: string;
@@ -10,16 +9,13 @@ interface ContentCardProps {
 }
 
 const ContentCard: React.FC<ContentCardProps> = ({
-  id,
   imagePath,
   creator,
   title,
   pricingOption,
   price,
 }) => {
-  const [imageError, setImageError] = useState(false);
-  const [imageLoading, setImageLoading] = useState(true);
-
+ 
   const getPricingDisplay = () => {
     switch (pricingOption) {
       case 0:

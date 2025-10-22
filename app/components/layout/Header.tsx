@@ -12,7 +12,6 @@ const Header: React.FC = () => {
             <a href="/">
               <span
                 aria-label="Go to Connect Main Page"
-                className="css-1ve2024 e1bwn3l84"
                 style={{
                   display: 'inline-block',
                   width: '80px',

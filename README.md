@@ -1,3 +1,4 @@
+# ![App Screenshot](./screenshot.png)
 
 # CLO Virtual Fashion Assignment
 

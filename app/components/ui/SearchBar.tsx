@@ -3,16 +3,23 @@ import React, { useState } from 'react';
 
 interface SearchBarProps {
   onSearch: (keyword: string) => void;
+  value?: string;
   placeholder?: string;
   className?: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
+  value = '',
   placeholder = "Find the items you're looking for",
   className = '',
 }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(value);
+
+  // Sync inputValue with value prop
+  React.useEffect(() => {
+    setInputValue(value);
+  }, [value]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);

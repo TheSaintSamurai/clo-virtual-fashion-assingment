@@ -141,6 +141,7 @@ const LandingPage: React.FC = () => {
 
   const handleReset = () => {
     dispatch(resetFilters());
+    dispatch(setPriceRange([0, 999]));
   };
 
   if (error) {
@@ -165,6 +166,7 @@ const LandingPage: React.FC = () => {
           <div className="search-bar">
             <SearchBar
               onSearch={handleSearch}
+              value={searchKeyword}
               className=""
             />
           </div>
@@ -201,8 +203,8 @@ const LandingPage: React.FC = () => {
               variant="ghost"
               size="sm"
               onClick={handleReset}
-              className="ml-auto"
-              style={{ fontSize: 13, color: '#eaeaea', fontFamily: 'AvenirNextLTProRegular', padding: '4px 12px' }}
+              className="ml-auto text-[#eaeaea] font-avenirNextLTProRegular px-3 py-1 bg-transparent border-none cursor-pointer hover:border-none focus:border-none active:border-none"
+              style={{ fontSize: 13 }}
             >
               RESET
             </Button>

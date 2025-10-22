@@ -212,11 +212,41 @@ function applyFiltersAndSearch(state: ContentState) {
 
   // Apply sorting
   if (state.sortBy === 'name') {
-    filtered = filtered.slice().sort((a, b) => a.title.localeCompare(b.title));
+    // No sorting, just show all items as filtered
+    filtered = filtered.slice();
   } else if (state.sortBy === 'higher') {
-    filtered = filtered.slice().sort((a, b) => (b.price || 0) - (a.price || 0));
+    // Priced > View Only > Free, then by price descending within Priced
+    filtered = filtered.slice().sort((a, b) => {
+      // PricingOption: 0 = PAID, 1 = FREE, 2 = VIEW_ONLY
+      const getRank = (item: ContentItem) => {
+        if (item.pricingOption === 0) return 0; // PAID
+        if (item.pricingOption === 2) return 1; // VIEW_ONLY
+        return 2; // FREE
+      };
+      const rankA = getRank(a);
+      const rankB = getRank(b);
+      if (rankA !== rankB) return rankA - rankB;
+      // If both are PAID, sort by price descending
+      if (rankA === 0) return (b.price || 0) - (a.price || 0);
+      // Otherwise, keep original order
+      return 0;
+    });
   } else if (state.sortBy === 'lower') {
-    filtered = filtered.slice().sort((a, b) => (a.price || 0) - (b.price || 0));
+    // Free > View Only > Priced, then by price ascending within Priced
+    filtered = filtered.slice().sort((a, b) => {
+      const getRank = (item: ContentItem) => {
+        if (item.pricingOption === 1) return 0; // FREE
+        if (item.pricingOption === 2) return 1; // VIEW_ONLY
+        return 2; // PAID
+      };
+      const rankA = getRank(a);
+      const rankB = getRank(b);
+      if (rankA !== rankB) return rankA - rankB;
+      // If both are PAID, sort by price ascending
+      if (rankA === 2) return (a.price || 0) - (b.price || 0);
+      // Otherwise, keep original order
+      return 0;
+    });
   }
 
   state.filteredContent = filtered;
